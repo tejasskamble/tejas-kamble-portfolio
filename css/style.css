@@ -1,0 +1,77 @@
+:root{--bg:#0c1424;--surface:#14213a;--line:#25365a;--text:#e8eef9;--muted:#9fb0cc;--amber:#ffb347;--mint:#4fe0c0;--r:14px;--head:'Bricolage Grotesque',system-ui,sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+h1,h2,h3{font-family:var(--head);line-height:1.12}
+h1{font-size:clamp(2.4rem,6.5vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin:.4rem 0 1rem}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:1.8rem}
+h3{font-size:1.2rem;font-weight:600;margin-bottom:.5rem}
+p{margin-bottom:1rem;max-width:62ch}
+.muted{color:var(--muted);font-size:.95rem}
+.role{color:var(--amber);font-weight:500}
+.lead{font-size:1.2rem;color:#c9d6ee}
+ul,ol{padding-left:1.2rem}li{margin-bottom:.4rem}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;transition:transform .25s,border-color .25s}
+a.card:hover,.proj .card:hover,.skills .card:hover{transform:translateY(-4px);border-color:var(--amber)}
+.btn{display:inline-block;font:500 .95rem var(--body);color:var(--text);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.65rem 1.3rem;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn:hover{border-color:var(--amber);transform:translateY(-2px)}
+.btn.primary{background:var(--amber);border-color:var(--amber);color:#1a1205;font-weight:600}
+.btn.primary:hover{background:#ffc470}
+.nav{position:fixed;inset:0 0 auto;z-index:10;background:rgba(12,20,36,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:800 1.15rem var(--head)}
+nav a{margin-left:1.4rem;color:var(--muted);font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a.on{color:var(--text);border-color:var(--amber)}
+.menu{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.menu span,.menu span::before{display:block;width:24px;height:2px;background:var(--text);margin:auto;position:relative;transition:transform .25s}
+.menu span::before{content:"";top:-8px;position:absolute;left:0}
+.menu[aria-expanded=true] span{transform:rotate(45deg)}
+.menu[aria-expanded=true] span::before{transform:translateY(8px) rotate(-90deg)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center;min-height:100vh;padding-top:7rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;padding:0;margin:.6rem 0 1rem}
+.chips li{margin:0;font-size:.88rem;padding:.25rem .75rem;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.chips li.hi{border-color:var(--amber);color:var(--amber)}
+.chips.big li{font-size:1rem;padding:.3rem .9rem}
+.pipe ol{list-style:none;padding:0;margin:1.2rem 0}
+.pipe li{position:relative;padding:.55rem 0 .55rem 2.2rem;opacity:.35;transition:opacity .4s}
+.pipe li::before{content:"";position:absolute;left:0;top:.95rem;width:14px;height:14px;border-radius:50%;border:2px solid var(--muted);background:var(--bg);transition:.4s}
+.pipe li:not(:last-child)::after{content:"";position:absolute;left:6px;top:1.6rem;bottom:-.6rem;width:2px;background:var(--line)}
+.pipe li.on{opacity:1}
+.pipe li.on::before{background:var(--mint);border-color:var(--mint);box-shadow:0 0 12px var(--mint)}
+.pipe h2{font-size:1.4rem;margin-bottom:.3rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.grid{display:grid;gap:1.2rem}
+.skills{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.proj{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.proj .card{display:flex;flex-direction:column}.proj .btn{align-self:flex-start;margin-top:auto}
+.proj ul:not(.chips){margin-bottom:1.2rem;font-size:.97rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}
+.tabs button{font:500 .9rem var(--body);color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;cursor:pointer;transition:.2s}
+.tabs button.on{background:var(--amber);border-color:var(--amber);color:#1a1205}
+.skills .card[hidden]{display:none}
+.timeline{list-style:none;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
+.timeline li{position:relative;margin-bottom:2rem}
+.timeline li::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--amber)}
+.links{display:grid;gap:.8rem}
+.links .card{padding:1rem 1.3rem}.links .muted{display:block}
+.btn#copy{justify-self:start}
+form label{display:block;margin-bottom:1rem;font-size:.95rem;color:var(--muted)}
+input,textarea{display:block;width:100%;margin-top:.35rem;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem}
+input:focus,textarea:focus{outline:2px solid var(--amber);border-color:transparent}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:2rem 0;border-top:1px solid var(--line)}
+footer p{margin:0}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero,.two{grid-template-columns:1fr}.hero{min-height:auto}}
+@media(max-width:760px){
+.menu{display:block}
+nav{position:absolute;top:64px;left:0;right:0;display:none;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 4%}
+nav.open{display:flex}
+nav a{margin:0;padding:.8rem 0;border:0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
